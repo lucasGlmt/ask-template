@@ -1,4 +1,4 @@
-require("dotenv").config()
+require('dotenv').config();
 const bdd = require('../models');
 
 console.log('Syncronisation de la BDD');
