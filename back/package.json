@@ -10,7 +10,7 @@
     "start": "node index.js",
     "dev": "nodemon index.js",
     "bdd": "node ./cli/bdd.js",
-    "lint": "lint",
+    "lint": "eslint",
     "check-pretty": "prettier --c ."
   },
   "author": "",
