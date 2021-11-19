@@ -1,3 +1,3 @@
 # podcast-host-template
 
-![example workflow](https://github.com/lucasGlmt/ask-template/actions/workflows/<github-action-demo.yml>/badge.svg)
+[![GitHub Actions Demo](https://github.com/lucasGlmt/ask-template/actions/workflows/github-actions-demo.yml/badge.svg)](https://github.com/lucasGlmt/ask-template/actions/workflows/github-actions-demo.yml)
