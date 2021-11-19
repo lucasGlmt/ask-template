@@ -38,7 +38,8 @@ jobs:
       with:
         node-version: 14
     - run: npm install --only=dev
-    - run: npm run check-prettyname: Check Lint & Pretty
+    - run: 
+      npm run check-prettyname: Check Lint & Pretty
 
 on:
   push:
