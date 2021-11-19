@@ -21,6 +21,7 @@
     "test": "react-scripts test",
     "lint": "eslint",
     "check-pretty": "prettier --c .",
+    "pretty": "prettier --write .",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -40,5 +41,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "prettier": "^2.4.1"
   }
 }
