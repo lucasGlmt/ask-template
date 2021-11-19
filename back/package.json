@@ -9,7 +9,9 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "bdd": "node ./cli/bdd.js"
+    "bdd": "node ./cli/bdd.js",
+    "lint": "lint",
+    "check-pretty": "prettier --c ."
   },
   "author": "",
   "license": "ISC",
