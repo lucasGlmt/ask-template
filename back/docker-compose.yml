@@ -11,6 +11,8 @@ services:
       - BDD_URL=mariadb://ask:ask@database/database
       - PORT=3630
     command: ['npm', 'run', 'dev']
+    ports:
+      - 3630:3630
 
   database:
     image: mariadb:10.6
