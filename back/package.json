@@ -11,7 +11,8 @@
     "dev": "nodemon index.js",
     "bdd": "node ./cli/bdd.js",
     "lint": "eslint",
-    "check-pretty": "prettier --c ."
+    "check-pretty": "prettier --c .",
+    "pretty": "prettier --write ."
   },
   "author": "",
   "license": "ISC",
