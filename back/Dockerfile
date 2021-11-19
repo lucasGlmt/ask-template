@@ -11,7 +11,7 @@ CMD [ "npm", "run", "dev" ]
 ## Conteneur de prod
 FROM runner as builder
 ENV NODE_ENV=production
-COPY package$.json ./
+COPY package.json ./
 RUN npm install
 
 CMD [ "npm", "start" ]
