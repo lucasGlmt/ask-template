@@ -2,6 +2,7 @@ require('dotenv').config();
 
 const express = require('express');
 const cors = require('cors');
+const multer = require('multer')();
 
 const bdd = require('./models');
 const app = express();
@@ -11,16 +12,17 @@ const questionType = ['question', 'action'];
 app.use(cors());
 app.use(express.json());
 
-app.post('/questions', (req, res) => {
+app.post('/questions', multer.single('file'), (req, res) => {
   if (
     !!req.body.question &&
     !!req.body.type &&
     questionType.includes(req.body.type)
   ) {
+    console.log(req.file);
     bdd.Question.create({
       question: req.body.question,
       type: req.body.type,
-      author: !!req.body.author ? req.body.author : null,
+      author: req.body.author ? req.body.author : null,
     }).then((question) => {
       res.json(question);
     });

@@ -23,3 +23,8 @@ services:
       - MYSQL_USER=ask
       - MYSQL_PASSWORD=ask
       - MYSQL_ROOT_PASSWORD=ask
+
+  fakes3:
+    image: fingershock/fakes3
+    ports:
+      - 8000:8000

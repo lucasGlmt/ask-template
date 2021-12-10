@@ -5,6 +5,8 @@ module.exports = (sequelize, DataTypes) => {
       question: DataTypes.STRING,
       type: DataTypes.STRING,
       author: DataTypes.STRING,
+      fileType: DataTypes.STRING,
+      filePath: DataTypes.STRING,
     },
     {}
   );

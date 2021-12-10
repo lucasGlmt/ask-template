@@ -2,15 +2,20 @@ import { host, checkStatus } from ".";
 
 const questions = {
   addQuestion: (body) => {
+    let fd = new FormData();
+    fd.append("author", body.author);
+    fd.append("question", body.question);
+    fd.append("type", body.type);
+    fd.append("file", body.file);
+
     return fetch(`${host}/questions`, {
       method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(body),
+
+      body: fd,
     })
       .then(checkStatus)
-      .then((res) => res.json());
+      .then((res) => res.json())
+      .catch((err) => console.error(err));
   },
   getAll: () => {
     return fetch(`${host}/questions`, {

@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js",
+    "dev": "nodemon -L server.js",
     "bdd": "node ./cli/bdd.js",
     "lint": "eslint",
     "check-pretty": "prettier --c .",
@@ -21,6 +21,7 @@
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "mariadb": "^2.5.4",
+    "multer": "^1.4.3",
     "sequelize": "^6.6.5"
   },
   "devDependencies": {

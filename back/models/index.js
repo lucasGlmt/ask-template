@@ -10,7 +10,7 @@ let sequelize = new Sequelize(process.env.BDD_URL);
 fs.readdirSync(__dirname)
   .filter((file) => {
     return (
-      file.indexOf('.') !== 0 &&
+      file.indexOf('..') !== 0 &&
       file !== basename &&
       file.slice(-3) === '.js' &&
       file != 'config.js'

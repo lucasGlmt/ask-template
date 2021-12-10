@@ -15,6 +15,8 @@ export default function Question() {
   const [type, setType] = useState("question");
   const [question, setQuestion] = useState("");
 
+  const [file, setFile] = useState(undefined);
+
   const { mutate: addQuestion } = useMutation(api.questions.addQuestion, {
     onSuccess: (data) => {
       history.push("/");
@@ -22,11 +24,13 @@ export default function Question() {
   });
 
   function handleAdd() {
+    console.log(file);
     if (!!question) {
       addQuestion({
         author: !!author ? author : undefined,
         type,
         question,
+        file,
       });
     }
   }
@@ -63,6 +67,14 @@ export default function Question() {
           onChange={(e) => setQuestion(e.target.value)}
           isInvalid={question === ""}
           rows={5}
+        />
+      </Form.Group>
+
+      <Form.Group controlId="file" className="mb-3">
+        <Form.Label>Default file input example</Form.Label>
+        <Form.Control
+          type="file"
+          onChange={(e) => setFile(e.target.files[0])}
         />
       </Form.Group>
 
