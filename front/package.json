@@ -19,10 +19,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "lint": "eslint",
-    "check-pretty": "prettier --c .",
+    "eject": "react-scripts eject",
     "pretty": "prettier --write .",
-    "eject": "react-scripts eject"
+    "check-pretty": "prettier --c ."
   },
   "eslintConfig": {
     "extends": [

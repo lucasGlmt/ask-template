@@ -1,17 +1,18 @@
-## Conteneur de dev
-FROM node:16-alpine as runner
-ENV NODE_ENV=developpement
-RUN mkdir /usr/app
-WORKDIR /usr/app
-COPY ./ /usr/app
+# Conteneur de dev
+FROM node:14 as runner
+ENV NODE_ENV=development
+
+WORKDIR /app
+COPY ./ /app
 
 EXPOSE 3630
-CMD [ "npm", "run", "dev" ]
+CMD ["npm", "run", "dev"]
 
-## Conteneur de prod
+# Conteneur de prod
 FROM runner as builder
 ENV NODE_ENV=production
-COPY package.json ./
+
+COPY package*.json ./
 RUN npm install
 
-CMD [ "npm", "start" ]
+CMD ["npm", "start"]

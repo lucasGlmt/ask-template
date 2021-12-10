@@ -3,30 +3,32 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "engines": {
-    "node": "16.10"
-  },
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon -L server.js",
+    "dev": "nodemon index.js",
     "bdd": "node ./cli/bdd.js",
-    "lint": "eslint",
-    "check-pretty": "prettier --c .",
-    "pretty": "prettier --write ."
+    "bucket": "node ./cli/setup_bucket.js",
+    "lint": "eslint .",
+    "lint-fix": "eslint . --fix",
+    "pretty": "prettier --write .",
+    "check-pretty": "prettier --c ."
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "aws-sdk": "^2.1033.0",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "mariadb": "^2.5.4",
     "multer": "^1.4.3",
+    "nanoid": "^3.1.30",
     "sequelize": "^6.6.5"
   },
   "devDependencies": {
-    "eslint": "^8.2.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
     "nodemon": "^2.0.13",
-    "prettier": "2.4.1"
+    "prettier": "^2.4.1"
   }
 }

@@ -1,30 +1,28 @@
-import { useState } from "react";
+import { useState } from 'react';
 
-import Container from "react-bootstrap/Container";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
+import Container from 'react-bootstrap/Container';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 
-import { useMutation } from "react-query";
-import { useHistory } from "react-router";
-import api from "../api";
+import { useMutation } from 'react-query';
+import { useHistory } from 'react-router';
+import api from '../api';
 
 export default function Question() {
   const history = useHistory();
 
-  const [author, setAuthor] = useState("");
-  const [type, setType] = useState("question");
-  const [question, setQuestion] = useState("");
-
-  const [file, setFile] = useState(undefined);
+  const [author, setAuthor] = useState('');
+  const [type, setType] = useState('question');
+  const [question, setQuestion] = useState('');
+  const [file, setFile] = useState(null);
 
   const { mutate: addQuestion } = useMutation(api.questions.addQuestion, {
     onSuccess: (data) => {
-      history.push("/");
+      history.push('/');
     },
   });
 
   function handleAdd() {
-    console.log(file);
     if (!!question) {
       addQuestion({
         author: !!author ? author : undefined,
@@ -65,23 +63,25 @@ export default function Question() {
           as="textarea"
           value={question}
           onChange={(e) => setQuestion(e.target.value)}
-          isInvalid={question === ""}
+          isInvalid={question === ''}
           rows={5}
         />
       </Form.Group>
 
-      <Form.Group controlId="file" className="mb-3">
-        <Form.Label>Default file input example</Form.Label>
+      <Form.Group>
+        <Form.Label>Ajouter une image</Form.Label>
+        <br />
         <Form.Control
           type="file"
-          onChange={(e) => setFile(e.target.files[0])}
+          accept=".jpg,.png"
+          onChange={(e) => setFile(e.target.files)}
         />
       </Form.Group>
 
       <Button
         onClick={handleAdd}
         disabled={!question}
-        style={{ marginTop: "10px" }}
+        style={{ marginTop: '10px' }}
       >
         Ajouter
       </Button>
